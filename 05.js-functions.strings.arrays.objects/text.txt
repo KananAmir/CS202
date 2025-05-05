@@ -1,0 +1,7 @@
+conditions
+loop
+arrays
+strings
+objects
+functions
+ 
