@@ -1,3 +1,95 @@
+
+const webTechs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB'] // array of web technologies
+
+console.log(webTechs[webTechs.length - 1]);
+const students = ["turqut", "mehriban", "kamal"]
+
+//array methods
+// students.push("laman")
+// students.unshift("sabir")
+
+// students.pop()
+// students.shift()
+
+// console.log(students);
+
+//splice
+
+// webTechs.splice(1, 4)
+// webTechs.splice(1, 2, "Bootstrap")
+webTechs.splice(1, 0, "Bootstrap")
+console.log(webTechs);
+
+
+
+console.log(webTechs.join(" "));
+console.log(webTechs.join(","));
+
+
+const numbers1 = [1, 2, 3]
+const numbers2 = [4, 5, 6]
+
+const allNumsArray = numbers1.concat(numbers2)
+// console.log(allNumsArray);
+console.log([...numbers1, ...numbers2]);
+
+
+
+const fruits = ['banana', 'orange', 'mango', 'lemon'] // array of strings, fruits
+
+// for (let i = 0; i < fruits.length; i++) {
+//     console.log(fruits[i]);
+// }
+
+
+fruits.forEach((element, index)=>{
+    console.log(element); 
+})
+
+const numbers = [0, 3.14, 9.81, 37, 98.6, 7, 10, 37] // array of numbers
+
+let sum = 0
+numbers.forEach((number)=>{
+    sum += number
+})
+
+console.log(sum);
+
+
+const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot'] // array of strings, vegetables
+const animalProducts = ['milk', 'meat', 'butter', 'yoghurt'] // array of strings, products
+const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland'] // array of strings, countries
+
+//forEach
+countries.forEach((item)=>{
+    console.log(item);  
+})
+//map
+
+const nums = [1,2,3,4]
+
+// const emptyArr = []
+// for (let i = 0; i < nums.length; i++) {
+//     emptyArr.push(nums[i] * 2)
+// }
+
+// console.log(emptyArr);
+
+const res = nums.map((item)=>item * 2)
+
+console.log(res);
+
+
+
+const newCountriesArray = countries.map((country)=>{
+   return country.toUpperCase().slice(0, 3)
+})
+
+console.log(newCountriesArray);
+
+
+
+
 const employees = [
     {
         id: 1,
@@ -101,62 +193,29 @@ const employees = [
     }
 ];
 
-const vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot'] // array of strings, vegetables
-const animalProducts = ['milk', 'meat', 'butter', 'yoghurt'] // array of strings, products
-const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland'] // array of strings, countries
 
-const webTechs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB'] // array of web technologies
-
-console.log(webTechs[webTechs.length - 1]);
-const students = ["turqut", "mehriban", "kamal"]
-
-//array methods
-// students.push("laman")
-// students.unshift("sabir")
-
-// students.pop()
-// students.shift()
-
-// console.log(students);
-
-//splice
-
-// webTechs.splice(1, 4)
-// webTechs.splice(1, 2, "Bootstrap")
-webTechs.splice(1, 0, "Bootstrap")
-console.log(webTechs);
+console.log(employees);
 
 
-
-console.log(webTechs.join(" "));
-console.log(webTechs.join(","));
+// const numbers = [0, 3.14, 9.81, 37, 98.6, 7, 10, 37] // array of numbers
 
 
-const numbers1 = [1, 2, 3]
-const numbers2 = [4, 5, 6]
-
-const allNumsArray = numbers1.concat(numbers2)
-// console.log(allNumsArray);
-console.log([...numbers1, ...numbers2]);
+// console.log(numbers.find((n)=>n>15)); //37
+// console.log(numbers.filter((n)=>n>15)); //37
 
 
+const filteredEmployees = employees.filter((element)=>element.salary > 1500)
+const activeEmployees = employees.filter((element)=>element.isActive === true)
+console.log(filteredEmployees);
+console.log(activeEmployees);
 
-const fruits = ['banana', 'orange', 'mango', 'lemon'] // array of strings, fruits
 
-// for (let i = 0; i < fruits.length; i++) {
-//     console.log(fruits[i]);
+// function searchEmployee(value){
+//     return employees.filter((element)=>element.name.toLowerCase().includes(value.toLowerCase()))
 // }
 
+// console.log(searchEmployee("gun"));
 
-fruits.forEach((element, index)=>{
-    console.log(element); 
-})
 
-const numbers = [0, 3.14, 9.81, 37, 98.6, 37, 100, 37] // array of numbers
-
-let sum = 0
-numbers.forEach((number)=>{
-    sum += number
-})
-
-console.log(sum);
+// console.log(employees.every((item)=>item.salary > 900));
+console.log(employees.some((item)=>item.salary > 1900));

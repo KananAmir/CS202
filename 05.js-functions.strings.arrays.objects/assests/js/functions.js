@@ -135,3 +135,23 @@ console.log(student.getAverageScore());
 
 
 
+
+//callback function
+
+function mainFunc(cb){
+    cb()
+}
+
+function callbackFunc(a){
+    console.log("I am callback"); 
+}
+
+
+mainFunc(callbackFunc)
+mainFunc(function(){
+    console.log("hiii, I am cb");
+})
+
+mainFunc(()=>{
+    console.log("hiii, I am cb");
+})
