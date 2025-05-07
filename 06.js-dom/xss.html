@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Example</title>
+</head>
+<body>
+  <input id="userInput" placeholder="Type something..." />
+  <button onclick="displayInput()">Submit</button>
+  <div id="output"></div>
+
+  <script>
+
+function sanitize(str) {
+    return str.replace(/[&<>"']/g, function (char) {
+      return {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+      }[char];
+    });
+  }
+    function displayInput() {
+      const input = document.getElementById("userInput").value;
+      // document.getElementById("output").innerHTML = input; // 🚨 XSS vulnerability here
+      document.getElementById("output").innerHTML = sanitize(input); 
+    }
+  </script>
+</body>
+</html>
