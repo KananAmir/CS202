@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>CS202</h2>
+
+    <script>
+
+        // document.cookie = "name=John Doe; expires=Fri, 31 Dec 2023 23:59:59 GMT; path=/; secure; SameSite=None";
+        window.addEventListener("click", async ()=>{
+            const response = await fetch("https://northwind.vercel.app/api/categories", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    token: document.cookie,
+                    description: "test"
+                })
+                });
+        })
+
+    </script>
+</body>
+</html>

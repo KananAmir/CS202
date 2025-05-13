@@ -1,0 +1,5 @@
+ cors
+ authorization, authentication
+ RBAC - role base access control
+ jwt token
+ 
