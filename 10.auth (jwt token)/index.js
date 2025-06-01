@@ -3,11 +3,25 @@ const { v4: uuidv4 } = require('uuid');
 const { rateLimit } = require('express-rate-limit')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cors = require('cors')
 
 
 require('dotenv').config()
 
+
+
 const app = express()
+
+app.use(cors(
+    {
+        origin: 'www.example.com',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        exposedHeaders: ['x-api-key'],
+        credentials: true,
+    }
+))
+
 const port = process.env.PORT || 8080
 const products = [
     {

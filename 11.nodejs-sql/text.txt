@@ -1,0 +1,14 @@
+ cors
+ authorization, authentication
+ RBAC - role base access control
+ jwt token
+ 
+
+
+sql vs no sql
+sql - structured query languge
+sql is used for relational databases
+
+
+nosql - non structured query languge
+nosql is used for non relational databases 
